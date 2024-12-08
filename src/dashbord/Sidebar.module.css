@@ -1,0 +1,102 @@
+/* Sidebar styles */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #28a745; /* Green background for sidebar */
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease;
+  padding-top: 20px;
+  box-sizing: border-box;
+  z-index: 1000; /* Ensure sidebar stays above other content */
+  overflow: hidden; /* Prevent content from overflowing */
+}
+
+.sidebar.collapsed {
+  width: 0;
+  padding-top: 0;
+  overflow: hidden; /* Hide overflow content when collapsed */
+}
+
+.sidebarLinks {
+  margin-top: 40px; /* Margin for spacing between items */
+  opacity: 1; /* Fully visible when sidebar is expanded */
+  transition: opacity 0.3s ease; /* Smooth transition for text visibility */
+}
+
+.sidebar.collapsed .sidebarLinks {
+  opacity: 0; /* Hide text when sidebar is collapsed */
+  pointer-events: none; /* Disable interaction with hidden links */
+}
+
+.sidebarLinks a {
+  display: block;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.sidebarLinks a:hover {
+  background-color: #218838; /* Hover effect for sidebar links */
+  padding-left: 30px; /* Indent text on hover for interactivity */
+}
+
+.sidebar .logoutBtn {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Responsive styles for mobile screens */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 0; /* Start with collapsed sidebar */
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure sidebar stays on top */
+  }
+
+  .sidebar.expanded {
+    width: 100%; /* Expand sidebar to full width on smaller screens */
+  }
+
+  .sidebarLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 0; /* Remove top margin for mobile view */
+  }
+
+  .sidebarLinks a {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+
+  .sidebar .logoutBtn {
+    font-size: 1rem;
+  }
+
+  /* Add a button to toggle the sidebar on mobile screens */
+  .menu-toggle-btn {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}

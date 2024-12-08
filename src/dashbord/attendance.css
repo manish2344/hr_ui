@@ -1,0 +1,128 @@
+
+
+
+  /* General Attendance Dashboard Styles */
+.attendance-dashboard {
+  display: flex;
+}
+
+.attendance-dashboard-content {
+  margin-left: 220px; /* Space for the Sidebar */
+  padding: 2rem;
+  margin-top:100px; 
+  width: 100%;
+}
+
+.attendance-dashboard-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* Attendance Table */
+.attendance-table {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.attendance-table table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.attendance-table th,
+.attendance-table td {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.attendance-table th {
+  background-color: #007bff;
+  color: white;
+}
+
+.attendance-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.attendance-table td {
+  font-size: 14px;
+}
+
+/* Remove Edit and Delete Icons */
+.attendance-table td .edit-icon,
+.attendance-table td .delete-icon {
+  display: none;
+}
+
+/* Custom Style for the Attendance Status Dropdown */
+.attendance-table td select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.attendance-table td select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+/* Hover Effect for Dropdown */
+.attendance-table td select:hover {
+  border-color: #007bff;
+}
+
+/* Option Style */
+.attendance-table td select option {
+  padding: 10px;
+  font-size: 14px;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Add custom background color for each option */
+.attendance-table td select option[value="Present"] {
+  background-color: #28a745;
+  color: white;
+}
+
+.attendance-table td select option[value="Absent"] {
+  background-color: #dc3545;
+  color: white;
+}
+
+.attendance-table td select option[value="Late"] {
+  background-color: #ffc107;
+  color: white;
+}
+
+/* Responsive Design for Attendance Table */
+@media (max-width: 768px) {
+  .attendance-dashboard-content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  .attendance-table th,
+  .attendance-table td {
+    padding: 0.5rem;
+    font-size: 12px;
+  }
+
+  .attendance-table td select {
+    font-size: 12px;
+    padding: 8px;
+  }
+}

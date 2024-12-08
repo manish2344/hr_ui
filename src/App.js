@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import AuctionList from './components/AuctionPage';
+
 import Navbar from './components/Navbar';
 import Login from './components/Login';
 import Register from './components/Register';
 import Home from './components/Home';
 import './App.css';
-import { WebSocketProvider } from './components/WebSocketContext';
+import Dashboard from './dashbord/Dashboar';
+import Candidate from './dashbord/Candidate';
+import Employee from './dashbord/Employee';
+import Attendance from './dashbord/Attendance';
+import LeaveCalendar from './dashbord/LeaveCalendar';
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -30,19 +34,24 @@ const App = () => {
   };
 
   return (
-    <WebSocketProvider>
+    
     <Router>
-      <Navbar isAuthenticated={isAuthenticated} onLogout={handleLogout} />
+      {/* <Navbar isAuthenticated={isAuthenticated} onLogout={handleLogout} /> */}
       <div className="main-content">
         <Routes>
-          <Route path="/" element={<AuctionList/>} />
+          
           <Route path="/login" element={<Login onLogin={handleLogin} />} />
           <Route path="/register" element={<Register />} />
-          {/* <Route path="/auctions" element={<AuctionList />} /> */}
+          <Route path="/" element={<Candidate/>} />
+          <Route path="/employees" element={<Employee/>} />
+          <Route path="/attendance" element={<Attendance/>} />
+          <Route path="/leave" element={<LeaveCalendar/>} />
+          
+
         </Routes>
       </div>
     </Router>
-    </WebSocketProvider>
+    
   );
 };
 

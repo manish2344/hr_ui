@@ -1,0 +1,159 @@
+/* General Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping for small screens */
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999; /* Ensure navbar is on top */
+}
+
+/* Left section of the navbar */
+.navbarLeft {
+  display: flex;
+  align-items: center;
+}
+
+/* Navbar brand (title/logo) */
+.navbarBrand {
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+  margin-left: 250px;
+  
+  transition: margin-left 0.3s ease;
+}
+
+/* Hamburger menu button */
+.hamburger {
+  background: none;
+  border: none;
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.hamburger div {
+  background-color: white;
+  height: 4px;
+  width: 100%;
+}
+
+/* Right section of the navbar */
+.navbarRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navbarRight a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.navbarRight a:hover {
+  text-decoration: underline;
+}
+
+/* Logout and notification buttons */
+.logoutBtn,
+.notificationBtn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px; /* Compact padding for smaller screens */
+  }
+
+  .navbarLeft {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* Hide the brand (logo) on mobile screens */
+  .navbarBrand {
+    font-size: 1.2rem; /* Reduce font size for smaller screens */
+    margin-left: 0; /* Remove excessive margin on phones */
+    display: none; /* Hide logo on small screens */
+  }
+
+  .hamburger {
+    display: flex; /* Show hamburger menu on smaller screens */
+  }
+
+  .navbarRight {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start;
+    background-color: #444;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    display: none; /* Hidden by default */
+    padding: 10px 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .navbarRight.show {
+    display: flex;
+    transform: translateY(0); /* Slide down into view */
+    opacity: 1;
+  }
+
+  .navbarRight a {
+    padding: 10px 20px;
+    font-size: 0.9rem; /* Smaller font size for compact look */
+    width: 100%;
+    text-align: left;
+  }
+
+  .logoutBtn,
+  .notificationBtn {
+    padding: 10px 20px;
+    font-size: 0.9rem; /* Smaller buttons for compact look */
+    width: 100%;
+    text-align: left;
+  }
+
+  /* Ensure logout button stays visible on mobile */
+  .logoutBtn {
+    display: block; /* Make sure it's visible on small screens */
+    width: auto; /* Remove full width to align it with the other elements */
+    padding: 10px 20px;
+  }
+
+  .navbarRight a,
+  .logoutBtn {
+    font-size: 1rem;
+  }
+}
+
+/* Show navbar brand (logo) on larger screens */
+@media (min-width: 769px) {
+  .navbarBrand {
+    display: block; /* Show logo only on larger screens */
+  }
+
+  .navbarRight {
+    display: flex;
+  }
+}

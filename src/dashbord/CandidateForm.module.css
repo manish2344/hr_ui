@@ -1,0 +1,137 @@
+/* General Styles for Candidate Section */
+.candidate-dashboard {
+    display: flex;
+}
+
+.candidate-dashboard-content {
+    margin-left: 220px; /* Space for the Sidebar */
+    padding: 2rem;
+    width: 100%;
+}
+
+.candidate-dashboard-content h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+/* Candidate Table */
+.candidate-table {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.candidate-table table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.candidate-table th,
+.candidate-table td {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.candidate-table th {
+    background-color: #17a2b8; /* Different color for Candidate table header */
+    color: white;
+}
+
+.candidate-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.candidate-table td {
+    font-size: 14px;
+}
+
+/* Action Icons for Edit & Delete */
+.candidate-table td .edit-icon,
+.candidate-table td .delete-icon {
+    font-size: 18px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.candidate-table td .edit-icon {
+    color: #ffc107; /* Yellow for editing */
+}
+
+.candidate-table td .delete-icon {
+    color: #dc3545; /* Red for deleting */
+}
+
+.candidate-table td .edit-icon:hover {
+    color: #e0a800;
+}
+
+.candidate-table td .delete-icon:hover {
+    color: #c82333;
+}
+
+/* Responsive Design for Candidate Table */
+@media (max-width: 768px) {
+    .candidate-dashboard-content {
+        margin-left: 0;
+        padding: 1rem;
+    }
+
+    .candidate-table th,
+    .candidate-table td {
+        padding: 0.5rem;
+        font-size: 12px;
+    }
+
+    .candidate-table td .edit-icon,
+    .candidate-table td .delete-icon {
+        font-size: 16px;
+    }
+}
+
+/* Candidate Header */
+.candidate-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Search Bar for Candidate Section */
+.candidate-search-bar {
+    padding: 10px;
+    border: 2px solid #87ceeb;
+    border-radius: 20px;
+    width: 250px;
+    outline: none;
+    font-size: 14px;
+    color: #333;
+    background-color: #f0f8ff;
+    transition: all 0.3s ease;
+}
+
+.candidate-search-bar:focus {
+    border-color: #4682b4;
+    box-shadow: 0 0 5px #87ceeb;
+}
+
+/* Add New Candidate Button */
+.add-candidate-btn {
+    padding: 10px 20px;
+    background-color: #28a745; /* Green for add action */
+    color: white;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-candidate-btn:hover {
+    background-color: #218838;
+}

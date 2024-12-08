@@ -1,0 +1,257 @@
+.candidate-dashboard {
+  display: flex;
+}
+
+.candidate-dashboard-content {
+  margin-left: 220px; /* Space for the Sidebar */
+  margin-top:   100px; 
+  padding: 2rem;
+  width: 100%;
+}
+
+.candidate-dashboard-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* Candidate Table */
+.candidate-table {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.candidate-table table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.candidate-table th,
+.candidate-table td {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.candidate-table th {
+  background-color: #007bff;
+  color: white;
+}
+
+.candidate-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.candidate-table td {
+  font-size: 14px;
+}
+
+.candidate-table td .resume-btn,
+.candidate-table td .delete-btn,
+.candidate-table td .move-to-employee-btn {
+  font-size: 14px;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.candidate-table td .resume-btn:hover {
+  background-color: #f0f8ff;
+}
+
+.candidate-table td .delete-btn:hover {
+  background-color: #ffe6e6;
+}
+
+.candidate-table td .move-to-employee-btn:hover {
+  background-color: #e6ffe6;
+}
+
+/* Action Buttons (Move, Delete) */
+.move-to-employee-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.resume-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Responsive Design for Candidate Table */
+@media (max-width: 768px) {
+  .candidate-dashboard-content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  .candidate-table th,
+  .candidate-table td {
+    padding: 0.5rem;
+    font-size: 12px;
+  }
+
+  .candidate-table td .resume-btn,
+  .candidate-table td .delete-btn,
+  .candidate-table td .move-to-employee-btn {
+    font-size: 12px;
+    padding: 4px;
+  }
+}
+
+/* Search and Add Candidate Section */
+.search-add-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.search-bar-container {
+  flex: 1;
+}
+
+.search-bar-input {
+  padding: 10px;
+  border: 2px solid #87ceeb;
+  border-radius: 20px;
+  width: 250px;
+  outline: none;
+  font-size: 14px;
+  color: #333;
+  background-color: #f0f8ff;
+  transition: all 0.3s ease;
+}
+
+.search-bar-input:focus {
+  border-color: #4682b4;
+  box-shadow: 0 0 5px #87ceeb;
+}
+
+.add-candidate-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  max-width: 200px; 
+  transition: background-color 0.3s ease;
+}
+
+.add-candidate-btn:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Styling for modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.candidate-dashboard-content {
+  position: relative;
+}
+
+.search-add-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-bar-container {
+  width: 150px; /* Reduced the width of the search bar */
+}
+
+.search-bar-input {
+  /* width: 100%; */
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.add-candidate-btn {
+  padding: 10px 15px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-candidate-btn:hover {
+  background-color: #218838;
+}
+
+.candidate-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.candidate-table th,
+.candidate-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.resume-btn,
+.delete-btn,
+.move-to-employee-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.resume-btn {
+  color: #007bff;
+}
+
+.delete-btn {
+  color: red;
+}
+
+.move-to-employee-btn {
+  color: green;
+}
