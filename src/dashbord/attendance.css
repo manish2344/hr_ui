@@ -1,15 +1,11 @@
-
-
-
-  /* General Attendance Dashboard Styles */
 .attendance-dashboard {
   display: flex;
 }
 
 .attendance-dashboard-content {
-  margin-left: 220px; /* Space for the Sidebar */
+  margin-left: 220px;
   padding: 2rem;
-  margin-top:100px; 
+  margin-top: 100px;
   width: 100%;
 }
 
@@ -19,7 +15,6 @@
   color: #333;
 }
 
-/* Attendance Table */
 .attendance-table {
   width: 100%;
   overflow-x: auto;
@@ -54,13 +49,11 @@
   font-size: 14px;
 }
 
-/* Remove Edit and Delete Icons */
 .attendance-table td .edit-icon,
 .attendance-table td .delete-icon {
   display: none;
 }
 
-/* Custom Style for the Attendance Status Dropdown */
 .attendance-table td select {
   padding: 10px;
   border-radius: 5px;
@@ -79,12 +72,10 @@
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
 }
 
-/* Hover Effect for Dropdown */
 .attendance-table td select:hover {
   border-color: #007bff;
 }
 
-/* Option Style */
 .attendance-table td select option {
   padding: 10px;
   font-size: 14px;
@@ -92,7 +83,6 @@
   color: #333;
 }
 
-/* Add custom background color for each option */
 .attendance-table td select option[value="Present"] {
   background-color: #28a745;
   color: white;
@@ -108,7 +98,6 @@
   color: white;
 }
 
-/* Responsive Design for Attendance Table */
 @media (max-width: 768px) {
   .attendance-dashboard-content {
     margin-left: 0;

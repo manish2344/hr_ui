@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import styles from './Navbar.module.css'; // Importing the CSS Module
+import styles from './Navbar.module.css';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleLogout = () => {
+  const handleLogout = () => { 
     localStorage.removeItem('token');
     window.location.href = '/login';
   };

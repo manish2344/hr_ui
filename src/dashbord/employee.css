@@ -1,129 +1,124 @@
-/* General Styles for Employee Section */
 .employee-dashboard {
-    display: flex;
-  }
-  
+  display: flex;
+}
+
+.employee-dashboard-content {
+  margin-left: 220px;
+  margin-top: 100px;
+  padding: 2rem;
+  width: 100%;
+}
+
+.employee-dashboard-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.employee-table {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.employee-table table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.employee-table th,
+.employee-table td {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.employee-table th {
+  background-color: #007bff;
+  color: white;
+}
+
+.employee-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.employee-table td {
+  font-size: 14px;
+}
+
+.employee-table td .edit-icon,
+.employee-table td .delete-icon {
+  font-size: 18px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.employee-table td .edit-icon {
+  color: #28a745;
+}
+
+.employee-table td .delete-icon {
+  color: #dc3545;
+}
+
+.employee-table td .edit-icon:hover {
+  color: #218838;
+}
+
+.employee-table td .delete-icon:hover {
+  color: #c82333;
+}
+
+.edit-icon:hover {
+  color: #28a745;
+}
+
+.delete-icon:hover {
+  color: #dc3545;
+}
+
+@media (max-width: 768px) {
   .employee-dashboard-content {
-    margin-left: 220px; /* Space for the Sidebar */
-    margin-top:100px; 
-    padding: 2rem;
-    width: 100%;
-  }
-  
-  .employee-dashboard-content h1 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #333;
-  }
-  
-  /* Employee Table */
-  .employee-table {
-    width: 100%;
-    overflow-x: auto;
-    margin-top: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .employee-table table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-  }
-  
-  .employee-table th,
-  .employee-table td {
-    padding: 1rem;
-    border: 1px solid #ddd;
-    text-align: center;
-  }
-  
-  .employee-table th {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .employee-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  .employee-table td {
-    font-size: 14px;
-  }
-  
-  .employee-table td .edit-icon,
-  .employee-table td .delete-icon {
-    font-size: 18px;
-    cursor: pointer;
-    margin: 0 10px;
-    transition: color 0.3s ease;
-  }
-  
-  .employee-table td .edit-icon {
-    color: #28a745;
-  }
-  
-  .employee-table td .delete-icon {
-    color: #dc3545;
-  }
-  
-  .employee-table td .edit-icon:hover {
-    color: #218838;
-  }
-  
-  .employee-table td .delete-icon:hover {
-    color: #c82333;
-  }
-  
-  /* Action Buttons (Edit & Delete) */
-  .edit-icon:hover {
-    color: #28a745;
-  }
-  
-  .delete-icon:hover {
-    color: #dc3545;
-  }
-  
-  /* Responsive Design for Employee Table */
-  @media (max-width: 768px) {
-    .employee-dashboard-content {
       margin-left: 0;
       padding: 1rem;
-    }
-  
-    .employee-table th,
-    .employee-table td {
+  }
+
+  .employee-table th,
+  .employee-table td {
       padding: 0.5rem;
       font-size: 12px;
-    }
-  
-    .employee-table td .edit-icon,
-    .employee-table td .delete-icon {
+  }
+
+  .employee-table td .edit-icon,
+  .employee-table td .delete-icon {
       font-size: 16px;
-    }
   }
-  
-  .employee-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .search-bar {
-    padding: 10px; /* Add some padding for a better look */
-    border: 2px solid #87ceeb; /* Light blue border */
-    border-radius: 20px; /* Rounded corners */
-    width: 250px; /* Slightly wider for better visibility */
-    outline: none; /* Remove default outline on focus */
-    font-size: 14px; /* Adjust font size */
-    color: #333; /* Dark text for readability */
-    background-color: #f0f8ff; /* Light blue background */
-    transition: all 0.3s ease; /* Smooth transitions */
-  }
-  
-  .search-bar:focus {
-    border-color: #4682b4; /* Slightly darker blue on focus */
-    box-shadow: 0 0 5px #87ceeb; /* Glow effect on focus */
-  }
-  
+}
+
+.employee-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  padding: 10px;
+  border: 2px solid #87ceeb;
+  border-radius: 20px;
+  width: 250px;
+  outline: none;
+  font-size: 14px;
+  color: #333;
+  background-color: #f0f8ff;
+  transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+  border-color: #4682b4;
+  box-shadow: 0 0 5px #87ceeb;
+}

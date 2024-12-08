@@ -1,24 +1,22 @@
-
-
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
-import CandidateForm from "./CandidateForm"; // Import the CandidateForm component
-import "./Candidate.css"; // Import the updated candidate.css for styling
-import { FaTrash, FaDownload, FaUserCheck } from "react-icons/fa"; // Add icon for move to employee
+import CandidateForm from "./CandidateForm";
+import "./Candidate.css";
+import { FaTrash, FaDownload, FaUserCheck } from "react-icons/fa";
 
 const Candidate = () => {
   const [candidates, setCandidates] = useState([]);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
-  const [searchTerm, setSearchTerm] = useState(""); // State for search term
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
   const toggleModal = () => {
-    setIsModalOpen(!isModalOpen); // Toggle the modal visibility
+    setIsModalOpen(!isModalOpen);
   };
 
   const addCandidate = (newCandidate) => {
@@ -117,10 +115,9 @@ const Candidate = () => {
 
   return (
     <>
-      {/* <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} /> */}
-      <Navbar/>
-      <Sidebar/>
-      
+      <Navbar />
+      <Sidebar />
+
       <div className={`candidate-dashboard ${isSidebarOpen ? "sidebar-open" : "sidebar-collapsed"}`}>
         <div className="candidate-dashboard-content">
           <h1>Candidate List</h1>
@@ -211,4 +208,3 @@ const Candidate = () => {
 };
 
 export default Candidate;
-

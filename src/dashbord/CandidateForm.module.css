@@ -1,10 +1,9 @@
-/* General Styles for Candidate Section */
 .candidate-dashboard {
     display: flex;
 }
 
 .candidate-dashboard-content {
-    margin-left: 220px; /* Space for the Sidebar */
+    margin-left: 220px;
     padding: 2rem;
     width: 100%;
 }
@@ -15,7 +14,6 @@
     color: #333;
 }
 
-/* Candidate Table */
 .candidate-table {
     width: 100%;
     overflow-x: auto;
@@ -38,7 +36,7 @@
 }
 
 .candidate-table th {
-    background-color: #17a2b8; /* Different color for Candidate table header */
+    background-color: #17a2b8;
     color: white;
 }
 
@@ -50,7 +48,6 @@
     font-size: 14px;
 }
 
-/* Action Icons for Edit & Delete */
 .candidate-table td .edit-icon,
 .candidate-table td .delete-icon {
     font-size: 18px;
@@ -60,11 +57,11 @@
 }
 
 .candidate-table td .edit-icon {
-    color: #ffc107; /* Yellow for editing */
+    color: #ffc107;
 }
 
 .candidate-table td .delete-icon {
-    color: #dc3545; /* Red for deleting */
+    color: #dc3545;
 }
 
 .candidate-table td .edit-icon:hover {
@@ -75,7 +72,6 @@
     color: #c82333;
 }
 
-/* Responsive Design for Candidate Table */
 @media (max-width: 768px) {
     .candidate-dashboard-content {
         margin-left: 0;
@@ -94,7 +90,6 @@
     }
 }
 
-/* Candidate Header */
 .candidate-header {
     display: flex;
     justify-content: space-between;
@@ -102,7 +97,6 @@
     margin-bottom: 20px;
 }
 
-/* Search Bar for Candidate Section */
 .candidate-search-bar {
     padding: 10px;
     border: 2px solid #87ceeb;
@@ -120,10 +114,9 @@
     box-shadow: 0 0 5px #87ceeb;
 }
 
-/* Add New Candidate Button */
 .add-candidate-btn {
     padding: 10px 20px;
-    background-color: #28a745; /* Green for add action */
+    background-color: #28a745;
     color: white;
     font-size: 14px;
     border: none;

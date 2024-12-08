@@ -1,10 +1,9 @@
-
 import './LeaveCalendar.css';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
+
 const LeaveManagementPage = () => {
     const [employeeId, setEmployeeId] = useState('');
     const [leaveType, setLeaveType] = useState('');
@@ -14,20 +13,17 @@ const LeaveManagementPage = () => {
     const [error, setError] = useState('');
     const [leaveRequests, setLeaveRequests] = useState([]);
 
-    // Get the token from localStorage or any other storage method
     const token = localStorage.getItem('token');
 
-    // Fetch leave requests for admin view
     useEffect(() => {
         const fetchLeaveRequests = async () => {
             try {
                 const response = await axios.get('https://hr-board-iota.vercel.app/api/leaves/requests', {
                     headers: {
-                        Authorization: `Bearer ${token}`,  // Add token to request headers
+                        Authorization: `Bearer ${token}`,
                     }
                 });
                 setLeaveRequests(response.data.data);
-                console.log(response.data)
                 setError('');
             } catch (err) {
                 setError(err.response ? err.response.data.message : 'Something went wrong');
@@ -35,9 +31,8 @@ const LeaveManagementPage = () => {
         };
 
         fetchLeaveRequests();
-    }, [token]); // Depend on token to refresh if token changes
+    }, [token]);
 
-    // Handle leave application for employee
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -49,7 +44,7 @@ const LeaveManagementPage = () => {
                 endDate
             }, {
                 headers: {
-                    Authorization: `Bearer ${token}`,  // Add token to request headers
+                    Authorization: `Bearer ${token}`,
                 }
             });
 
@@ -61,15 +56,13 @@ const LeaveManagementPage = () => {
         }
     };
 
-    // Handle leave status update for admin
     const handleUpdateStatus = async (id, status) => {
         try {
             const response = await axios.put(`https://hr-board-iota.vercel.app/api/leaves/update/${id}`, { status }, {
                 headers: {
-                    Authorization: `Bearer ${token}`,  // Add token to request headers
+                    Authorization: `Bearer ${token}`,
                 }
             });
-            // Update the leave request status locally
             setLeaveRequests(leaveRequests.map(request =>
                 request._id === id ? { ...request, status: response.data.data.status } : request
             ));
@@ -80,7 +73,6 @@ const LeaveManagementPage = () => {
 
     return (
         <div className="leave-management-container">
-            {/* Employee Section */}
             <Navbar />
             <Sidebar />
             <div className="employee-section">
@@ -133,7 +125,6 @@ const LeaveManagementPage = () => {
                 {error && <p className="error-message">{error}</p>}
             </div>
 
-            {/* Admin Section */}
             <div className="admin-section">
                 <h1>Admin Leave Requests</h1>
                 {error && <p className="error-message">{error}</p>}

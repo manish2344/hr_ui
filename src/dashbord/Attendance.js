@@ -1,8 +1,7 @@
-
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
-import './attendance.css'; // Import the CSS for the Attendance section
+import './attendance.css';
 
 const Attendance = () => {
   const [attendance, setAttendance] = useState([]);
@@ -13,7 +12,6 @@ const Attendance = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  // Fetch attendance from the API with authentication token
   useEffect(() => {
     const token = localStorage.getItem("token");
 
@@ -33,7 +31,6 @@ const Attendance = () => {
       .catch((error) => console.error("Error fetching attendance:", error));
   }, []);
 
-  // Handle status change and update attendance via API
   const handleStatusChange = (id, status) => {
     const token = localStorage.getItem("token");
 
@@ -52,7 +49,6 @@ const Attendance = () => {
         return response.json();
       })
       .then((data) => {
-        // Update the local state after successful update
         setAttendance((prevAttendance) =>
           prevAttendance.map((entry) =>
             entry._id === id ? { ...entry, status } : entry
@@ -74,8 +70,6 @@ const Attendance = () => {
               <thead>
                 <tr>
                   <th>Name</th>
-                  {/* <th>Date</th> */}
-                  
                   <th>Designation</th>
                   <th>Department</th>
                   <th>Task</th>
@@ -86,11 +80,10 @@ const Attendance = () => {
                 {attendance.length > 0 ? (
                   attendance.map((entry) => (
                     <tr key={entry._id}>
-                      <td>{entry.employeeId?.name}</td> {/* Accessing the name from employeeId */}
-                      
-                      <td>{entry.designation}</td> {/* Displaying the designation */}
-                      <td>{entry.department}</td> {/* Displaying the department */}
-                      <td>{entry.task}</td> {/* Displaying the task */}
+                      <td>{entry.employeeId?.name}</td>
+                      <td>{entry.designation}</td>
+                      <td>{entry.department}</td>
+                      <td>{entry.task}</td>
                       <td>
                         <select
                           value={entry.status}
@@ -117,7 +110,5 @@ const Attendance = () => {
     </>
   );
 };
-
-
 
 export default Attendance;

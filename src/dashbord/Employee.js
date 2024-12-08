@@ -1,19 +1,18 @@
-
 import React, { useEffect, useState } from "react";
 import Sidebar from "./Sidebar";
-import './employee.css'; // Import the CSS for the Employee section
+import './employee.css'; 
 import { FiTrash } from "react-icons/fi";
 import Navbar from "./Navbar";
+
 const Employee = () => {
   const [employees, setEmployees] = useState([]);
-  const [searchTerm, setSearchTerm] = useState(""); // State for the search bar
+  const [searchTerm, setSearchTerm] = useState("");
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  // Fetch employees from the API with authentication token
   useEffect(() => {
     fetchEmployees();
   }, []);
@@ -52,13 +51,11 @@ const Employee = () => {
           throw new Error("Failed to delete employee");
         }
         console.log(`Employee with id ${id} deleted`);
-        // Refresh the employee list after deletion
         setEmployees(employees.filter((emp) => emp._id !== id));
       })
       .catch((error) => console.error("Error deleting employee:", error));
   };
 
-  // Filter employees based on the search term
   const filteredEmployees = employees.filter(
     (employee) =>
       employee.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -67,7 +64,7 @@ const Employee = () => {
 
   return (
     <>
-    <Navbar />
+      <Navbar />
       <Sidebar isOpen={isSidebarOpen} />
       <div className={`employee-dashboard ${isSidebarOpen ? "sidebar-open" : "sidebar-collapsed"}`}>
         <div className="employee-dashboard-content">
