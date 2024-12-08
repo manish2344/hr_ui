@@ -17,7 +17,7 @@ const Attendance = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    fetch("http://localhost:5000/api/attendance", {
+    fetch("https://hr-board-iota.vercel.app/api/attendance", {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
@@ -37,7 +37,7 @@ const Attendance = () => {
   const handleStatusChange = (id, status) => {
     const token = localStorage.getItem("token");
 
-    fetch(`http://localhost:5000/api/attendance/${id}`, {
+    fetch(`https://hr-board-iota.vercel.app/api/attendance/${id}`, {
       method: "PUT",
       headers: {
         Authorization: `Bearer ${token}`,

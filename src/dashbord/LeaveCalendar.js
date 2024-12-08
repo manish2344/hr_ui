@@ -21,7 +21,7 @@ const LeaveManagementPage = () => {
     useEffect(() => {
         const fetchLeaveRequests = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/leaves/requests', {
+                const response = await axios.get('https://hr-board-iota.vercel.app/api/leaves/requests', {
                     headers: {
                         Authorization: `Bearer ${token}`,  // Add token to request headers
                     }
@@ -42,7 +42,7 @@ const LeaveManagementPage = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('http://localhost:5000/api/leaves/apply', {
+            const response = await axios.post('https://hr-board-iota.vercel.app/api/leaves/apply', {
                 employeeId,
                 leaveType,
                 startDate,
@@ -64,7 +64,7 @@ const LeaveManagementPage = () => {
     // Handle leave status update for admin
     const handleUpdateStatus = async (id, status) => {
         try {
-            const response = await axios.put(`http://localhost:5000/api/leaves/update/${id}`, { status }, {
+            const response = await axios.put(`https://hr-board-iota.vercel.app/api/leaves/update/${id}`, { status }, {
                 headers: {
                     Authorization: `Bearer ${token}`,  // Add token to request headers
                 }

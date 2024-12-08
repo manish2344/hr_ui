@@ -14,7 +14,7 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:5000/api/auth/register', { username, email, password });
+      await axios.post('https://hr-board-iota.vercel.app/api/auth/register', { username, email, password });
       navigate('/login');
     } catch (err) {
       setError('Error registering. Please try again.');

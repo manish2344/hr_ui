@@ -196,7 +196,7 @@ const CandidateForm = ({ onAddCandidate, onClose }) => {
 
     const token = localStorage.getItem("token");
 
-    fetch("http://localhost:5000/api/candidates", {
+    fetch("https://hr-board-iota.vercel.app/api/candidates", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,

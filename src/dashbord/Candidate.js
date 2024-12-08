@@ -28,7 +28,7 @@ const Candidate = () => {
   const deleteCandidate = (candidateId) => {
     const token = localStorage.getItem("token");
 
-    fetch(`http://localhost:5000/api/candidates/${candidateId}`, {
+    fetch(`https://hr-board-iota.vercel.app/api/candidates/${candidateId}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -47,7 +47,7 @@ const Candidate = () => {
   const handleResumeDownload = (candidateId, candidateName) => {
     const token = localStorage.getItem("token");
 
-    fetch(`http://localhost:5000/api/candidates/${candidateId}/resume`, {
+    fetch(`https://hr-board-iota.vercel.app/api/candidates/${candidateId}/resume`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -72,7 +72,7 @@ const Candidate = () => {
   const moveToEmployee = (candidateId) => {
     const token = localStorage.getItem("token");
 
-    fetch(`http://localhost:5000/api/candidates/${candidateId}/move-to-employee`, {
+    fetch(`https://hr-board-iota.vercel.app/api/candidates/${candidateId}/move-to-employee`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -95,7 +95,7 @@ const Candidate = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    fetch("http://localhost:5000/api/candidates", {
+    fetch("https://hr-board-iota.vercel.app/api/candidates", {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",

@@ -21,7 +21,7 @@ const Employee = () => {
   const fetchEmployees = () => {
     const token = localStorage.getItem("token");
 
-    fetch("http://localhost:5000/api/employees", {
+    fetch("https://hr-board-iota.vercel.app/api/employees", {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
@@ -40,7 +40,7 @@ const Employee = () => {
   const handleDelete = (id) => {
     const token = localStorage.getItem("token");
 
-    fetch(`http://localhost:5000/api/employees/${id}`, {
+    fetch(`https://hr-board-iota.vercel.app/api/employees/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,
